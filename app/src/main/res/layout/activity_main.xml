@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Length"
-        />
+        android:text="@string/Length" />
 
     <EditText
         android:id="@+id/et_Length"
@@ -49,7 +48,15 @@
         android:id="@+id/btn_Calculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Calculate" />
+        android:text="@string/Calculate"
+    />
+
+    <Button
+        android:id="@+id/btn_Reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Reset"
+    />
 
     <TextView
         android:id="@+id/tv_Result"
@@ -58,7 +65,6 @@
         android:gravity="center"
         android:text="@string/Result"
         android:textSize="24sp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
 </LinearLayout>

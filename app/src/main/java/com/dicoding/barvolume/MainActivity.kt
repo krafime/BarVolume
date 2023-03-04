@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity(){
     private lateinit var etHeight: EditText
     private lateinit var etLength: EditText
     private lateinit var btnCalculate: Button
+    private lateinit var btnReset: Button
     private lateinit var tvResult: TextView
     @SuppressLint("MissingInflatedId")
 
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity(){
         private const val STATE_RESULT = "state_result"
     }
 
+    @SuppressLint("MissingInflatedId", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity(){
         etHeight = findViewById(R.id.et_Height)
         etLength = findViewById(R.id.et_Length)
         btnCalculate = findViewById(R.id.btn_Calculate)
+        btnReset = findViewById(R.id.btn_Reset)
         tvResult = findViewById(R.id.tv_Result)
 
         btnCalculate.setOnClickListener{
@@ -58,6 +61,16 @@ class MainActivity : AppCompatActivity(){
                 }
             }
         }
+
+        btnReset.setOnClickListener{
+            if(it?.id == R.id.btn_Reset) {
+                etLength.text = null
+                etHeight.text = null
+                etWidth.text = null
+                tvResult.text = "Hasil"
+            }
+        }
+
 
         if (savedInstanceState != null) {
             val result = savedInstanceState.getString(STATE_RESULT)
